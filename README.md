@@ -1,6 +1,7 @@
 # machine
 
-TODO: Write a description here
+Simple machine learning algorithm.
+Status : working on decision tree.
 
 ## Installation
 
@@ -10,12 +11,10 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   machine:
-    github: [your-github-name]/machine
+    github: mathieulaporte/machine
 ```
 
-
 ## Usage
-
 
 ```crystal
 require "machine"
