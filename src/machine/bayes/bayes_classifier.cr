@@ -5,9 +5,11 @@ module Machine
         @words = Hash(String, Int32).new(0)
         @word_count = 0
       end
+
       def words
         @words
       end
+
       def word_count
         @word_count
       end
@@ -16,6 +18,7 @@ module Machine
         @word_count = val
       end
     end
+
     class BayesClasifier
       def initialize(@categories_names : Array(String))
         @categories = {} of String => Category
@@ -37,7 +40,7 @@ module Machine
         @category_counts[category] += 1
         count_words_occurence(text).each do |word, count|
           @categories[category].words[word] += count
-          @categories[category].word_count = @categories[category].word_count+= count
+          @categories[category].word_count = @categories[category].word_count += count
         end
       end
 
@@ -59,7 +62,7 @@ module Machine
       end
 
       def classify_with_score(text : String)
-        classifications(text).map { |k, v| { k => -v } }.sort_by { |a| a.values[0] }[0]
+        classifications(text).map { |k, v| {k => -v} }.sort_by { |a| a.values[0] }[0]
       end
 
       def classify(text : String)
@@ -69,7 +72,7 @@ module Machine
       def count_words_occurence(text)
         hash = Hash(String, Int32).new(0)
         text.split(" ").each do |word|
-          hash[word] += hash[word] + 1
+          hash[word] += 1
         end
         hash
       end
