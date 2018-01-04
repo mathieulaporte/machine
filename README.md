@@ -19,7 +19,7 @@ dependencies:
 ```crystal
 require "machine"
 
-classifier = Machine::Bayes::BayesClasifier.new(["cat", "dog"])
+classifier = Machine::Bayes::BayesClassifier.new(["cat", "dog"])
 
 classifier.train("dog", "dogs are awesome")
 classifier.train("dog", "The domestic dog Canis lupus familiaris or Canis familiaris is a member of genus Canis canines that forms part of the wolf-like canids and is the most widely abundant carnivore.")
