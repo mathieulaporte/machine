@@ -1,6 +1,6 @@
 require 'machine'
 
-classifier = Machine::Bayes::BayesClasifier.new(["cat", "dog"])
+classifier = Machine::Bayes::BayesClassifier.new(["cat", "dog"])
 
 classifier.train("dog", "Dogs are awesome, cats too. I love my dog")
 classifier.train("cat", "Cats are more preferred by software developers. I never could stand cats. I have a dog")
