@@ -1,4 +1,4 @@
-require 'machine'
+require "../src/machine"
 
 classifier = Machine::Bayes::BayesClasifier.new(["cat", "dog"])
 
