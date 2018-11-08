@@ -55,7 +55,7 @@ module Machine
             s = category.words.keys.includes?(word) ? category.words[word] : 0.1
             score[category_name] += Math.log(s / total)
           end
-          s = @category_counts.key?(category_name) ? @category_counts[category_name] : 0.1
+          s = @category_counts.has_key?(category_name) ? @category_counts[category_name] : 0.1
           score[category_name] += Math.log(s / training_count)
         end
         score
