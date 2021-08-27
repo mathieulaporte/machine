@@ -71,6 +71,10 @@ module Machine
 
       def count_words_occurence(text)
         hash = Hash(String, Int32).new(0)
+
+        # "".split(" ") returns "", so check for it
+        return hash if text.blank?
+
         text.split(" ").each do |word|
           hash[word] += 1
         end
